@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events in JS</title>
+    <script>
+        function validate() {
+            var name = document.myform.username.value;
+            var password = document.myform.password.value;
+
+            document.write(name + "<br>");
+            document.write(password)
+
+            // Validation
+            if (name === "" || password === "") {
+                alert("Please Enter your Username and Password")
+            }
+            else if (password.length < 8) {
+                alert("Password should be atleast 8 characters long!")
+            }
+            else if (name === "Shashank" && password === "123456789") {
+                alert("Login is Successful")
+            }
+            else {
+                alert("Login is Failed")
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <form name="myform" method="post" onsubmit="validate()">
+        <label for="name">Name :</label>
+        <input type="text" name="username" id="name" required>
+        <br><br>
+        <label for="password">Password :</label>
+        <input type="password" name="password" id="password" required>
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+</body>
+
+</html>
